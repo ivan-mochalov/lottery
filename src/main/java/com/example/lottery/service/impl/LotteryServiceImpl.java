@@ -15,6 +15,10 @@ import java.util.concurrent.ThreadLocalRandom;
 @RequiredArgsConstructor
 public class LotteryServiceImpl implements LotteryService {
 
+    private static final Integer LOWER_BOUND = 1;
+    private static final Integer UPPER_BOUND = 1000;
+    private static final Integer PARTICIPANTS_AMOUNT_THRESHOLD = 2;
+
     private final ParticipantServiceImpl participantService;
 
     @Override
@@ -24,7 +28,7 @@ public class LotteryServiceImpl implements LotteryService {
 
         if (isEnough(participants)) {
             ThreadLocalRandom random = ThreadLocalRandom.current();
-            Integer winningsAmount = random.nextInt(1, 1000);
+            Integer winningsAmount = random.nextInt(LOWER_BOUND, UPPER_BOUND);
             int winnerIndex = random.nextInt(0, participants.size() - 1);
             Participant participant = participants.get(winnerIndex);
             log.info("Participant {} won {} dead racoons!\n{}", participant.getName(), winningsAmount, participant);
@@ -37,6 +41,6 @@ public class LotteryServiceImpl implements LotteryService {
     }
 
     private boolean isEnough(List<Participant> participants) {
-        return !participants.isEmpty() && participants.size() >= 2;
+        return !participants.isEmpty() && participants.size() >= PARTICIPANTS_AMOUNT_THRESHOLD;
     }
 }
