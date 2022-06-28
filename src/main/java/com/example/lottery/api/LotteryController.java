@@ -1,6 +1,6 @@
 package com.example.lottery.api;
 
-import com.example.lottery.service.impl.LotteryServiceImpl;
+import com.example.lottery.service.LotteryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class LotteryController {
 
-    private final LotteryServiceImpl service;
+    private final LotteryService service;
 
     @GetMapping
     @ResponseStatus(HttpStatus.ACCEPTED)

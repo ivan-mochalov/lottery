@@ -2,7 +2,7 @@ package com.example.lottery.api;
 
 import com.example.lottery.dto.ParticipantDto;
 import com.example.lottery.mapping.ParticipantMapper;
-import com.example.lottery.service.impl.ParticipantServiceImpl;
+import com.example.lottery.service.ParticipantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +22,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequiredArgsConstructor
 public class ParticipantController {
 
-    private final ParticipantServiceImpl service;
+    private final ParticipantService service;
     private final ParticipantMapper mapper;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)

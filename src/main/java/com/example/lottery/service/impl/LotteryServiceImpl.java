@@ -3,6 +3,7 @@ package com.example.lottery.service.impl;
 import com.example.lottery.entity.Participant;
 import com.example.lottery.exception.NotEnoughParticipantsException;
 import com.example.lottery.service.LotteryService;
+import com.example.lottery.service.ParticipantService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class LotteryServiceImpl implements LotteryService {
     private static final Integer UPPER_BOUND = 1000;
     private static final Integer PARTICIPANTS_AMOUNT_THRESHOLD = 2;
 
-    private final ParticipantServiceImpl participantService;
+    private final ParticipantService participantService;
 
     @Override
     public void start() {
