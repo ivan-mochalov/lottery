@@ -1,2 +1,34 @@
-# lottery
-lottery app
+# The lottery
+lottery spring boot app
+
+### Prerequisites
+
+* installed java
+
+### Run
+
+```
+> ./gradlew bootRun
+```
+
+### Try
+```
+GET http://localhost:8080/lottery/participants
+Accept: */*
+Content-Type: application/json
+```
+```
+POST http://localhost:8080/lottery/participants
+Accept: */*
+Content-Type: application/json
+
+{
+  "name": "Joe Doe",
+  "age": 100,
+  "city": "Saint P"
+}
+```
+```
+GET http://localhost:8080/lottery/start
+Accept: */*
+```
