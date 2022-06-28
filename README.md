@@ -3,7 +3,7 @@ lottery spring boot app
 
 ### Prerequisites
 
-* installed java
+* installed java 11
 
 ### Run
 
@@ -11,7 +11,7 @@ lottery spring boot app
 > ./gradlew bootRun
 ```
 
-### Try
+### Try out
 ```
 GET http://localhost:8080/lottery/participants
 Accept: */*
@@ -31,4 +31,9 @@ Content-Type: application/json
 ```
 GET http://localhost:8080/lottery/start
 Accept: */*
+```
+```
+GET http://localhost:8080/lottery/winners
+Accept: */*
+Content-Type: application/json
 ```

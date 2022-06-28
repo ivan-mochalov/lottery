@@ -18,8 +18,8 @@ import java.time.Instant;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "participants")
-public class Participant {
+@Entity(name = "winners")
+public class Winner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +28,10 @@ public class Participant {
     private String name;
     private Integer age;
     private String city;
+    @Column(name = "winnings_amount")
+    private Integer winningsAmount;
+    @Column(name = "participated_at")
+    private Instant participatedAt;
     @Column(name = "created_at", columnDefinition = "timestamp not null default now()", insertable = false, updatable = false)
     @Setter(AccessLevel.NONE)
     private Instant createdAt;

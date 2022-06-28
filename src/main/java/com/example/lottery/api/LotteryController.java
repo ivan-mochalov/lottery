@@ -16,7 +16,7 @@ public class LotteryController {
     private final LotteryService service;
 
     @GetMapping
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     public void startLottery() {
         service.start();
     }

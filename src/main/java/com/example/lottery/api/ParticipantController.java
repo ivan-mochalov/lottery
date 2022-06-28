@@ -27,8 +27,8 @@ public class ParticipantController {
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Long createParticipant(@RequestBody ParticipantDto participant) {
-        return service.createParticipant(mapper.from(participant));
+    public void createParticipant(@RequestBody ParticipantDto participant) {
+        service.createParticipant(mapper.from(participant));
     }
 
     @GetMapping(produces = APPLICATION_JSON_VALUE)

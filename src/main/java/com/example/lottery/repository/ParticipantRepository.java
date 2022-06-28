@@ -9,5 +9,5 @@ public interface ParticipantRepository extends JpaRepository<Participant, Long> 
 
     @Modifying
     @Query(value = "truncate table participants", nativeQuery = true)
-    void cleanUp();
+    void deleteAll();
 }

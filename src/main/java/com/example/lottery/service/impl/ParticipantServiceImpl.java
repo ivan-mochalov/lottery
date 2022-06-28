@@ -17,10 +17,9 @@ public class ParticipantServiceImpl implements ParticipantService {
     private final ParticipantRepository repository;
 
     @Override
-    public Long createParticipant(Participant participant) {
+    public void createParticipant(Participant participant) {
         participant = repository.save(participant);
-        log.info("Saved new participant: {}", participant);
-        return participant.getId();
+        log.info("Saved new participant {} with id {}", participant.getName(), participant.getId());
     }
 
     @Override
@@ -30,8 +29,8 @@ public class ParticipantServiceImpl implements ParticipantService {
     }
 
     @Override
-    public void cleanUp() {
-        log.info("Removing all participants");
-        repository.cleanUp();
+    public void deleteAllParticipants() {
+        log.info("Deleting all participants");
+        repository.deleteAll();
     }
 }

@@ -8,10 +8,10 @@ import java.util.List;
 @Transactional
 public interface ParticipantService {
 
-    Long createParticipant(Participant participant);
+    void createParticipant(Participant participant);
 
     @Transactional(readOnly = true)
     List<Participant> getAllParticipants();
 
-    void cleanUp();
+    void deleteAllParticipants();
 }
