@@ -19,7 +19,7 @@ public class WinnerServiceImpl implements WinnerService {
     @Override
     public void createWinner(Winner winner) {
         winner = repository.save(winner);
-        log.info("Saved new winner {} with id {}", winner.getName(), winner.getId());
+        log.info("Saved new winner: {}", winner);
     }
 
     @Override

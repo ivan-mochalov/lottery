@@ -10,9 +10,11 @@ public class WinnerMapper {
 
     public Winner from(Participant participant, Integer winningsAmount) {
         return Winner.builder()
-                .name(participant.getName())
+                .firstName(participant.getFirstName())
+                .lastName(participant.getLastName())
                 .age(participant.getAge())
                 .city(participant.getCity())
+                .externalId(participant.getExternalId())
                 .participatedAt(participant.getCreatedAt())
                 .winningsAmount(winningsAmount)
                 .build();
@@ -20,9 +22,11 @@ public class WinnerMapper {
 
     public WinnerDto from(Winner winner) {
         return WinnerDto.builder()
-                .name(winner.getName())
+                .firstName(winner.getFirstName())
+                .lastName(winner.getLastName())
                 .age(winner.getAge())
                 .city(winner.getCity())
+                .externalId(winner.getExternalId())
                 .winningsAmount(winner.getWinningsAmount())
                 .build();
     }

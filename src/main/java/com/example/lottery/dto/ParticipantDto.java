@@ -7,7 +7,9 @@ import lombok.Value;
 @Builder
 public class ParticipantDto {
 
-    String name;
+    String firstName;
+    String lastName;
     Integer age;
     String city;
+    String externalId;
 }

@@ -7,8 +7,10 @@ import lombok.Value;
 @Builder
 public class WinnerDto {
 
-    String name;
+    String firstName;
+    String lastName;
     Integer age;
     String city;
+    String externalId;
     Integer winningsAmount;
 }

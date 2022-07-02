@@ -9,17 +9,21 @@ public class ParticipantMapper {
 
     public Participant from(ParticipantDto dto) {
         return Participant.builder()
-                .name(dto.getName())
+                .firstName(dto.getFirstName())
+                .lastName(dto.getLastName())
                 .age(dto.getAge())
                 .city(dto.getCity())
+                .externalId(dto.getExternalId())
                 .build();
     }
 
     public ParticipantDto from(Participant participant) {
         return ParticipantDto.builder()
-                .name(participant.getName())
+                .firstName(participant.getFirstName())
+                .lastName(participant.getLastName())
                 .age(participant.getAge())
                 .city(participant.getCity())
+                .externalId(participant.getExternalId())
                 .build();
     }
 }

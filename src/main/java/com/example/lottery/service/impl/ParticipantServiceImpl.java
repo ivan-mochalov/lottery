@@ -19,7 +19,7 @@ public class ParticipantServiceImpl implements ParticipantService {
     @Override
     public void createParticipant(Participant participant) {
         participant = repository.save(participant);
-        log.info("Saved new participant {} with id {}", participant.getName(), participant.getId());
+        log.info("Saved new participant: {}", participant);
     }
 
     @Override
